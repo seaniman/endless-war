@@ -9,3 +9,6 @@ debug5 = ewdebug.debug5
 cmd_debug6 = cmd_prefix + ewdebug.cmd_debug6
 cmd_debug7 = cmd_prefix + ewdebug.cmd_debug7
 cmd_debug8 = cmd_prefix + ewdebug.cmd_debug8
+
+
+smelting_recipe_list += ewdebug.debugrecipes
