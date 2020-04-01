@@ -1,0 +1,25 @@
+# Things a slimeoid might throw
+thrownobjects_list = [
+	"sewer cap",
+	"boulder",
+	"chunk of broken asphalt",
+	"broken fire hydrant",
+	"SlimeCorp-Brand Slime Containment Vessel (tm)",
+	"piece of sheet metal",
+	"burning tire",
+	"hapless bystander",
+	"completely normal small mammal",
+	"heap of broken glass",
+	"stereotypical nautical anchor",
+	"piece of an iron girder",
+	"pile of lumber",
+	"pile of bricks",
+	"unrecognizably decayed animal carcass",
+	"very fortuitously abandoned javelin",
+	"large rock",
+	"small motor vehicle",
+	"chunk of broken concrete",
+	"piece of rusted scrap metal",
+	"box overflowing with KFC branded bbq sauce",
+	"Nokia 3310"
+]

@@ -1,4 +1,27 @@
 
+# dye ids
+dye_black = "blackdye"
+dye_maroon = "maroondye"
+dye_green = "greendye"
+dye_brown = "browndye"
+dye_tan = "tandye"
+dye_purple = "purpledye"
+dye_teal = "tealdye"
+dye_orange = "orangedye"
+dye_gray = "graydye"
+dye_red = "reddye"
+dye_lime = "limedye"
+dye_yellow = "yellowdye"
+dye_blue = "bluedye"
+dye_fuchsia = "fuchsiadye"
+dye_aqua = "aquadye"
+dye_white = "whitedye"
+
+# list of dyes you're able to saturate your Slimeoid with
+dye_list = []
+dye_map = {}
+
+
 hue_id_yellow = "yellow"
 hue_id_orange = "orange"
 hue_id_red = "red"

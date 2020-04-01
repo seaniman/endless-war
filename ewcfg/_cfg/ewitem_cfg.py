@@ -38,6 +38,7 @@ it_furniture = 'furniture'
 it_book = 'book'
 
 
+
 item_def_list = [
 	EwItemDef(
 		# Unique item identifier. Not shown to players.

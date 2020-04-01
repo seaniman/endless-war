@@ -161,3 +161,134 @@ identifier_letters = [
 	'P', 'Q', 'R', 'S', 'T',
 	'U', 'V', 'W', 'X', 'Y', 'Z'
 ]
+
+# Attacking type effects
+def atf_fangs(ctn = None):
+	# Reskin of dual pistols
+
+	aim = (random.randrange(10) + 1)
+	ctn.sap_damage = 1
+
+	if aim == (1 + int(10 * ctn.miss_mod)):
+		ctn.miss = True
+		ctn.slimes_damage = 0
+	elif aim == (10 - int(10 * ctn.crit_mod)):
+		ctn.crit = True
+		ctn.slimes_damage *= 2
+
+def atf_talons(ctn = None):
+	# Reskin of katana
+
+	ctn.miss = False
+	ctn.slimes_damage = int(0.85 * ctn.slimes_damage)
+	ctn.sap_damage = 0
+	ctn.sap_ignored = 10
+
+	if (random.randrange(10) + 1) == (10 + int(10 * ctn.crit_mod)):
+		ctn.crit = True
+		ctn.slimes_damage *= 2.1
+
+def atf_raiderscythe(ctn = None):
+	# Reskin of scythe
+
+	ctn.enemy_data.change_slimes(n = (-ctn.slimes_spent * 0.33), source = source_self_damage)
+	ctn.slimes_damage = int(ctn.slimes_damage * 1.25)
+	aim = (random.randrange(10) + 1)
+	ctn.sap_damage = 0
+	ctn.sap_ignored = 5
+
+	if aim <= (2 + int(10 * ctn.miss_mod)):
+		ctn.miss = True
+		ctn.slimes_damage = 0
+	elif aim >= (9 - int(10 * ctn.crit_mod)):
+		ctn.crit = True
+		ctn.slimes_damage *= 2
+
+def atf_gunkshot(ctn = None):
+	# Reskin of rifle
+
+	aim = (random.randrange(10) + 1)
+	ctn.sap_damage = 2
+
+	if aim <= (2 + int(10 * ctn.miss_mod)):
+		ctn.miss = True
+		ctn.slimes_damage = 0
+	elif aim >= (9 - int(10 * ctn.crit_mod)):
+		ctn.crit = True
+		ctn.slimes_damage *= 2
+
+def atf_tusks(ctn = None):
+	# Reskin of bat
+
+	aim = (random.randrange(21) - 10)
+	ctn.sap_damage = 3
+	if aim <= (-9 + int(21 * ctn.miss_mod)):
+		ctn.miss = True
+		ctn.slimes_damage = 0
+
+	ctn.slimes_damage = int(ctn.slimes_damage * (1 + (aim / 10)))
+
+	if aim >= (9 - int(21 * ctn.crit_mod)):
+		ctn.crit = True
+		ctn.slimes_damage = int(ctn.slimes_damage * 1.5)
+
+def atf_molotovbreath(ctn = None):
+	# Reskin of molotov
+
+	dmg = ctn.slimes_damage
+	ctn.slimes_damage = int(ctn.slimes_damage * 0.75)
+	ctn.sap_damage = 0
+	ctn.sap_ignored = 10
+
+	aim = (random.randrange(10) + 1)
+
+	#ctn.bystander_damage = dmg * 0.5
+
+	if aim <= (2 + int(10 * ctn.miss_mod)):
+		ctn.backfire = True
+		ctn.backfire_damage = dmg
+
+	elif aim == (3 + int(10 * ctn.miss_mod)):
+		ctn.miss = True
+		ctn.slimes_damage = 0
+
+	elif aim == (10 - int(10 * ctn.crit_mod)):
+		ctn.crit = True
+		ctn.slimes_damage *= 2
+
+def atf_armcannon(ctn = None):
+	dmg = ctn.slimes_damage
+	ctn.sap_damage = 2
+
+	aim = (random.randrange(20) + 1)
+
+	if aim <= (2 + int(20 * ctn.miss_mod)):
+		ctn.miss = True
+
+	if aim == (20 - int(20 * ctn.crit_mod)):
+		ctn.crit = True
+		ctn.slimes_damage *= 3
+
+
+def atf_axe(ctn=None):
+	ctn.slimes_damage *= 0.7
+	aim = (random.randrange(10) + 1)
+
+	if aim <= (4 + int(10 * ctn.miss_mod)):
+		ctn.miss = True
+
+	if aim == (10 - int(10 * ctn.crit_mod)):
+		ctn.crit = True
+		ctn.slimes_damage *= 2
+
+
+def atf_hooves(ctn=None):
+	ctn.slimes_damage *= 0.4
+	aim = (random.randrange(30) + 1)
+
+	if aim <= (5 + int(30 * ctn.miss_mod)):
+		ctn.miss = True
+
+	if aim > (25 - int(30 * ctn.crit_mod)):
+		ctn.crit = True
+		ctn.slimes_damage *= 2
