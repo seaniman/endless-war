@@ -1,6 +1,10 @@
 
 # Hunting and Enemy related config
 
+
+# response string used to let attack function in ewwep know that an enemy is being attacked
+enemy_targeted_string = "ENEMY-TARGETED"
+
 # combatant ids to differentiate players and NPCs in combat
 combatant_type_enemy = "enemy"
 

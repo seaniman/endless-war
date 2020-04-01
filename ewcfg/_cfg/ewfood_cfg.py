@@ -22,3 +22,12 @@ inebriation_pertick = 2
 std_food_expir = 12 * 3600  # 12 hours
 farm_food_expir = 12 * 3600 * 4 # 2 days
 milled_food_expir = 12 * 3600 * 28 # 2 weeks
+
+vendor_stock_map = {
+	vendor_kfc : stock_kfc,
+	vendor_pizzahut : stock_pizzahut,
+	vendor_tacobell : stock_tacobell
+	}
+
+# A map of vendor names to their items.
+vendor_inv = {}

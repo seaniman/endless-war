@@ -85,3 +85,6 @@ mines_wall_map = {
 	channel_cv_mines : channel_cvmineswall
 }
 
+# List of items you can obtain via mining.
+mine_results = []
+

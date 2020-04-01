@@ -37,7 +37,10 @@ it_cosmetic = 'cosmetic'
 it_furniture = 'furniture'
 it_book = 'book'
 
-
+"""
+	The list of item definitions. Instances of items are always based on these
+	skeleton definitions.
+"""
 
 item_def_list = [
 	EwItemDef(

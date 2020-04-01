@@ -164,6 +164,12 @@ forbiddenstuffedcrust_desc = "What are you waiting for? You’ve come this far, 
 	"It’s ready to die. Slather it in some low-quality marinara, toss it up into the air like in the old movies, and " \
 	"shove it into the oven, to teach it the true meaning of heat death. Eat a slice of that motherfucking pizza."
 
+
+context_slimeoidheart = 'slimeoidheart'
+context_slimeoidbottle = 'slimeoidbottle'
+context_slimeoidfood = 'slimeoidfood'
+context_wrappingpaper = 'wrappingpaper'
+
 # List of normal items.
 item_list = [
 	EwGeneralItem(

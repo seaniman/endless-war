@@ -67,3 +67,8 @@ weather_list = [
 	 	night = "Clouds of doom obscure the moon as they dispense liquid death from above."
 	),
 ]
+
+rain_protection = [
+	cosmetic_id_raincoat,
+	weapon_id_umbrella
+]

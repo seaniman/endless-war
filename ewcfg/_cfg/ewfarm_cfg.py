@@ -60,3 +60,6 @@ for farm_action in farm_actions:
 	id_to_farm_action[farm_action.id_action] = farm_action
 	farm_action_ids.append(farm_action.id_action)
 
+
+# List of items you can obtain via milling.
+mill_results = []

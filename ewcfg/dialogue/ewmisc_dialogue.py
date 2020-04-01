@@ -40,3 +40,9 @@ moans = [
 	'**bbbbbBBBBrrrrrRRRRaaaaIIIIInnnnnnNNNNNzzzzZZZZZZZ!!!**',
 	'**CCCCRRRRRRIIIIINNNNNNNGGGGEEEEE! BBBBBAAAAAAAAAAASSSSSEEEDDDDDDDD!**'
 ]
+
+sea_scavenge_responses = [
+	"see a school of Fuck Sharks circling below you",
+	"notice an approaching kraken",
+	"remember you can't swim"
+]

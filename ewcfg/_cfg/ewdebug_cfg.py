@@ -12,3 +12,7 @@ cmd_debug8 = cmd_prefix + ewdebug.cmd_debug8
 
 
 smelting_recipe_list += ewdebug.debugrecipes
+
+item_list += ewdebug.debugitem_set
+
+debugitem = ewdebug.debugitem

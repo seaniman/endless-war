@@ -2861,3 +2861,18 @@ piers = []
 outskirts = []
 tutorial_pois = []
 zine_mother_districts = []
+
+# TODO: Add descriptions for each outskirts district.
+str_generic_outskirts_description = "It's a wasteland, devoid of all life except for slime beasts."
+
+
+landmark_pois = [
+	poi_id_dreadford,
+	poi_id_charcoalpark,
+	poi_id_slimesend,
+	poi_id_assaultflatsbeach,
+	poi_id_wreckington,
+]
+
+# maps districts to their immediate neighbors
+poi_neighbors = {}
