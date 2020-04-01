@@ -404,3 +404,34 @@ offline_cmds = [
 	cmd_scout_alt1,
 	cmd_scrutinize
 ]
+
+
+# zine related commands that can be used in DMs
+zine_commands = [
+	cmd_beginmanuscript,
+	cmd_beginmanuscript_alt_1,
+	cmd_beginmanuscript_alt_2,
+	cmd_setpenname,
+	cmd_setpenname_alt_1,
+	cmd_settitle,
+	cmd_settitle_alt_1,
+	cmd_setgenre,
+	cmd_editpage,
+	cmd_viewpage,
+	cmd_checkmanuscript,
+	cmd_publishmanuscript,
+	cmd_readbook,
+	cmd_nextpage,
+	cmd_nextpage_alt_1,
+	cmd_previouspage,
+	cmd_previouspage_alt_1,
+	cmd_previouspage_alt_2,
+	cmd_rate,
+	cmd_rate_alt_1,
+	cmd_rate_alt_2,
+	cmd_accept,
+	cmd_refuse,
+	cmd_setpages,
+	cmd_setpages_alt_1,
+	cmd_setpages_alt_2,
+]
