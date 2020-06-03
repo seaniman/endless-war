@@ -97,7 +97,7 @@ async def smelt(cmd):
 			else:
 				# If you try to smelt a random cosmetic, use old smelting code to calculate what your result will be.
 				if found_recipe.id_recipe == "cosmetic":
-					patrician_rarity = 20
+					patrician_rarity = 100
 					patrician_smelted = random.randint(1, patrician_rarity)
 					patrician = False
 
@@ -122,17 +122,13 @@ async def smelt(cmd):
 
 					item = items[random.randint(0, len(items) - 1)]
 
+					item_props = ewitem.gen_item_props(item)
+
 					ewitem.item_create(
-						item_type = ewcfg.it_cosmetic,
+						item_type = item.item_type,
 						id_user = cmd.message.author.id,
 						id_server = cmd.message.server.id,
-						item_props = {
-							'id_cosmetic': item.id_cosmetic,
-							'cosmetic_name': item.str_name,
-							'cosmetic_desc': item.str_desc,
-							'rarity': item.rarity,
-							'adorned': 'false'
-						}
+						item_props = item_props
 					)
 
 				# If you're trying to smelt a specific item.
@@ -253,4 +249,28 @@ def unwrap(id_user = None, id_server = None, item = None):
 	else:
 		response += " But… it’s mostly just repeats and late edition cards. You toss them away."
 
+	return response
+
+def popcapsule(id_user = None, id_server = None, item = None):
+	rarity_roll = random.randrange(10)
+	ewitem.item_delete(item.id_item)
+
+	if rarity_roll > 3:
+		prank_item = random.choice(ewcfg.prank_items_heinous)
+	elif rarity_roll > 0:
+		prank_item = random.choice(ewcfg.prank_items_scandalous)
+	else:
+		prank_item = random.choice(ewcfg.prank_items_forbidden)
+
+	item_props = ewitem.gen_item_props(prank_item)
+
+	prank_item_id = ewitem.item_create(
+		item_type=prank_item.item_type,
+		id_user=id_user.id,
+		id_server=id_server.id,
+		item_props=item_props
+	)
+	
+	response = "You pop open the Prank Capsule to reveal a {}! Whoa, sick!!".format(prank_item.str_name)
+	
 	return response

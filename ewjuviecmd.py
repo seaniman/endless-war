@@ -660,7 +660,7 @@ async def scavenge(cmd):
 		return await ewutils.send_message(cmd.client, cmd.message.channel, ewutils.formatMessage(cmd.message.author, "You consider diving down to the bottom of the sea to grab some sick loot, but quickly change your mind when you {}.".format(random.choice(ewcfg.sea_scavenge_responses))))
 
 	# Scavenge only in location channels
-	if ewmap.channel_name_is_poi(cmd.message.channel.name) == True:
+	if ewutils.channel_name_is_poi(cmd.message.channel.name) == True:
 		if user_data.hunger >= user_data.get_hunger_max():
 			return await ewutils.send_message(cmd.client, cmd.message.channel, ewutils.formatMessage(cmd.message.author, "You are too exhausted to scrounge up scraps of slime off the street! Go get some grub!"))
 		else:
@@ -755,6 +755,7 @@ async def scavenge(cmd):
 			user_data.time_lastscavenge = time_now
 
 			was_pvp = user_data.time_expirpvp > time_now
+
 			# Flag the user for PvP
 			enlisted = True if user_data.life_state == ewcfg.life_state_enlisted else False
 			user_data.time_expirpvp = ewutils.calculatePvpTimer(user_data.time_expirpvp, ewcfg.time_pvp_scavenge, enlisted)
@@ -799,7 +800,7 @@ async def crush(cmd):
 			sap_resp = ""
 			if ewcfg.status_sapfatigue_id not in status_effects:
 				sap_gain = 5
-				sap_gain = max(0, min(sap_gain, user_data.slimelevel - (user_data.hardened_sap + user_data.sap)))
+				sap_gain = max(0, min(sap_gain, ewutils.sap_max_bylevel(user_data.slimelevel) - (user_data.hardened_sap + user_data.sap)))
 				if sap_gain > 0:
 					user_data.sap += sap_gain
 					user_data.applyStatus(id_status = ewcfg.status_sapfatigue_id, source = user_data.id_user)
